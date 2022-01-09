@@ -20,6 +20,6 @@ services:
       dockerfile: DockerfileDjango
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes: 
-      - ./backend:/usr/src/app/django
+      - ./backend:/usr/src/app/django:cached
     ports: 
       - "8000:8000"
