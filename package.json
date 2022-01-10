@@ -1,6 +1,6 @@
 {
   "name": "twitter_good",
-  "homepage": "./",
+  "homepage": ".",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
