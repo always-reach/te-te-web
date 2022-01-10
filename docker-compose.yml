@@ -10,7 +10,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
     volumes:
       - ./:/usr/src/app:cached
-      - /usr/src/app/twitter_good/node_modules
+      - /usr/src/app/node_modules
     ports:
       - "3000:3000"
   
