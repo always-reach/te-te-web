@@ -1,9 +1,20 @@
-import { useState } from 'react'
+import * as React from 'react'
 import logo from './logo.svg'
 import './App.css'
+import { SearchLikedTweet } from './api/Twitter'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = React.useState(0)
+
+  React.useEffect(()=>{
+    const getLiked=async()=>{
+      const respone=await SearchLikedTweet("1365833961918722048")
+      const responeJson=await respone.json()
+      console.log("liked tweets",responeJson)
+    }
+
+    //getLiked()
+  },[])
 
   return (
     <div className="App">
