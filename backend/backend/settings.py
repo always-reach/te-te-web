@@ -9,17 +9,28 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = environ.Env()
+
+READ_ENV_FILE = env.bool('DJANGO_READ_ENV_FILE', default=True)
+if READ_ENV_FILE:
+    env_file = str(BASE_DIR / '.env')
+    env.read_env(env_file)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yu2jd_s@udn%p$3zgh6k!-$)mcxxy&0z%cm2!jgmnrtm*omfd!'
+SECRET_KEY = env.str("DJANGO_SECRET")
+
+TWITTER_URL=env.str("DJANGO_TWITTER_URL")
+TWITTER_BEARER_TOKEN=env.str("DJANGO_TWITTER_BEARER_TOKEN")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

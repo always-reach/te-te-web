@@ -8,7 +8,7 @@ function App() {
 
   React.useEffect(()=>{
     const getLiked=async()=>{
-      const respone=await SearchLikedTweet("1365833961918722048")
+      const respone=await SearchLikedTweet("000")
       const responeJson=await respone.json()
       console.log("liked tweets",responeJson)
     }
