@@ -8,5 +8,6 @@ dist-ssr
 backend/.idea
 backend/db.sqlite3
 backend/api/migrations
+backend/.env
 
 twitter_good/.env
